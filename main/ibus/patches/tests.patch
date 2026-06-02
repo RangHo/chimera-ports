@@ -13,15 +13,18 @@ index 21de7a2..a89c9c1 100644
  
      retval = g_test_run ();
 diff --git a/src/tests/ibus-keypress.c b/src/tests/ibus-keypress.c
-index bab0539..ed84386 100644
+index b9068d32..678bef14 100644
 --- a/src/tests/ibus-keypress.c
 +++ b/src/tests/ibus-keypress.c
-@@ -407,7 +407,5 @@
-     gtk_init (&argc, &argv);
- #endif
- 
--    g_test_add_func ("/ibus/keyrepss", test_keypress);
--
+@@ -800,10 +800,8 @@ main (int argc, char *argv[])
+         g_message ("Failed setenv NO_AT_BRIDGE\n");
+     g_test_init (&argc, &argv, NULL);
+     ibus_init ();
+-    g_test_add_func ("/ibus-keypress/test-init", test_init);
+     data.argc = argc;
+     data.argv = argv;
+-    g_test_add_data_func ("/ibus-keypress/keyrepss", &data, test_keypress);
+
      return g_test_run ();
  }
 diff --git a/src/tests/xkb-latin-layouts b/src/tests/xkb-latin-layouts
